@@ -1,14 +1,14 @@
 import axios from "axios";
-import React, { Component } from "react";
+import { Component } from "react";
 import { Link } from "react-router-dom";
 import { Unsubscribe } from "redux";
-import { Vacation } from "../../Models/Vacation";
-import { ActionType } from "../../redux/action-type";
 import { store } from "../../redux/store";
-import VacationCard from "../vacation-card/vacation-card";
+import { ActionType } from "../../redux/action-type";
+import { Vacation } from "../../Models/Vacation";
 import Chart from "../../icons/chart.png";
-import "./admin.css";
+import VacationCard from "../vacation-card/vacation-card";
 import GenericNavBtn from "../generic-utils/nav-btn";
+import "./admin.css";
 
 interface AdminState {
   vacations: Vacation[]

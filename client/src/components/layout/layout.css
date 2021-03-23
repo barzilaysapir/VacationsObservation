@@ -187,6 +187,11 @@ input:focus {
     z-index: 1;
     background-color: #333;
   }
+  button:hover {
+    color: #fff;
+    background-color: rgb(71, 71, 71);
+    border: 3px solid transparent;
+  }
 
   .chart {
     bottom: 1.5rem;
@@ -196,10 +201,6 @@ input:focus {
   .add-profile h2, 
   .edit-vacation h2 {
     font-size: 2.5rem;
-  }
-
-  .btns * {
-    margin: .5rem;
   }
 
   .modal-header {

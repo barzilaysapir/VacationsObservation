@@ -1,88 +1,103 @@
 .header * {
-    color: black;
-    padding-bottom: 2rem;
-    font-size: x-large;
+  color: black;
+  padding-bottom: 2rem;
+  font-size: x-large;
 }
 
 .header h1 {
-    font-size: 5rem;
-    text-align: center;
-    text-shadow: 2px 2px 6px gray;
+  font-size: 5rem;
+  text-align: center;
+  text-shadow: 2px 2px 6px gray;
 }
 
 h1.welcome {
-    position: absolute;
-    left: 40vw;
-    z-index: 2; 
-    animation: welcomeAnimation 2.5s forwards;
+  z-index: 2;
+  animation: welcomeAnimation 2.5s forwards;
 }
 
-@keyframes welcomeAnimation {    
-    0% {
-        opacity: 0;
-        transform: translate(-20vw) scale(1);
-    } 50%, 80% {
-        opacity: 1;
-        transform: translate(0) scale(1);
-    } 100% {
-        opacity: 0;
-        display: none;
-    }
+@keyframes welcomeAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-20vw) scale(1);
+  }
+  50%,
+  80% {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
 
 h1.landing {
-    animation: headerAnimation 3s ;
+  animation: headerAnimation 3s;
 }
 
 @keyframes headerAnimation {
-    0%, 20% {
-        z-index: 2;
-        opacity: 0;
-        transform: translate(-20vw, 30vh) scale(1.5);
-    } 60% {
-        transform: translate(0px, 30vh) scale(1.5);
-    } 80% {
-        opacity: 1;
-    } 100% {
-        transform: translate(0) scale(1);
-    }
+  0%,
+  20% {
+    z-index: 2;
+    opacity: 0;
+    transform: translate(-20vw, 30vh) scale(1.5);
+  }
+  60% {
+    transform: translate(0px, 30vh) scale(1.5);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0) scale(1);
+  }
 }
 
 .log-in-out {
-    padding-top: 1rem;
-    position: absolute;
-    top: 3.3rem;
-    left: 2.2rem;
-    cursor: pointer;
-    font-size: large;
-    font-weight: bold;
-    text-decoration: underline;
-    color: rgb(16, 74, 199);
-    transition: all .2s;
-    animation: holdFastFadein 3s ease-in;
+  padding-top: 1rem;
+  position: absolute;
+  top: 3.3rem;
+  left: 2.2rem;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  text-decoration: underline;
+  color: rgb(16, 74, 199);
+  transition: all 0.2s;
+  animation: holdFastFadein 3s ease-in;
 }
 
 @keyframes holdFastFadein {
-    0%, 80% {opacity: 0;}
-    100% {opacity: 1;}
+  0%,
+  80% {
+    opacity: 0;
   }
-
-.log-in-out:hover {
-    text-shadow: 0 0 3px lightskyblue;
+  100% {
+    opacity: 1;
+  }
 }
 
-
-
+.log-in-out:hover {
+  text-shadow: 0 0 3px lightskyblue;
+}
 
 /* RESPONSIVE */
 @media (max-width: 759px) {
-    .header h1 {
-        font-size: 4rem;
-    }
+  .header h1 {
+    font-size: 4rem;
+  }
+
+  h1.landing {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 481px) {
-    .header h1 {
-        padding-bottom: 1rem;
-    }
+  .header h1 {
+    padding-bottom: 1rem;
+  }
+
+  h1.landing {
+    font-size: 2rem;
+  }
 }

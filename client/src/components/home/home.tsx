@@ -1,13 +1,13 @@
 import axios from "axios";
-import React, { Component, FormEvent } from "react";
+import { Component, FormEvent } from "react";
+import { Unsubscribe } from "redux";
 import { store } from "../../redux/store";
 import { ActionType } from "../../redux/action-type";
-import { Unsubscribe } from "redux";
-import { User } from "../../Models/User";
-import { SuccessfulLoginServerResponse } from "../../Models/SuccessfulLoginServerResponse";
-import { Vacation } from "../../Models/Vacation";
-import VacationCard from "../vacation-card/vacation-card";
 import { io } from 'socket.io-client';
+import { User } from "../../Models/User";
+import { Vacation } from "../../Models/Vacation";
+import { SuccessfulLoginServerResponse } from "../../Models/SuccessfulLoginServerResponse";
+import VacationCard from "../vacation-card/vacation-card";
 import GenericNavBtn from "../generic-utils/nav-btn";
 import "./home.css";
 
@@ -63,7 +63,7 @@ export default class Home extends Component<any, HomeState> {
     // If not - get all from DB
     this.getAllVacations();
 
-    // And RECONNECT if there's a token on session storage (page was refreshed while logged in)
+    // RECONNECT if there's a token on session storage (page was refreshed while logged in)
     if (sessionStorage.getItem("token")) {
       store.dispatch({ type: ActionType.Login });
       axios.defaults.headers.common['Authorization'] = sessionStorage.getItem("token");

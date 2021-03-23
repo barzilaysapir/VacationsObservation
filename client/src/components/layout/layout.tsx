@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import ManageVacation from "../admin/manage-vacation";
+import Home from "../home/home";
+import Header from "../header/header";
 import Admin from "../admin/admin";
 import Chart from "../admin/chart";
-import Header from "../header/header";
-import Home from "../home/home";
+import ManageVacation from "../admin/manage-vacation";
 import EditProfile from "../user/edit-profile";
 import "./layout.css";
 

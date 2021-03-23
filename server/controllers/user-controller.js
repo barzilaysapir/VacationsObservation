@@ -38,7 +38,6 @@ router.get("/", async (request, response, next) => {
         response.json(userDetails);
 
     } catch (err) {
-        console.error(err);
         return next(err);
     }
 });
@@ -69,6 +68,5 @@ router.delete("/", async (request, response, next) => {
         return next(err);
     }
 });
-
 
 module.exports = router;

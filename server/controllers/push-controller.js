@@ -4,8 +4,8 @@ const expressServer = express();
 const http = require("http");
 const socketIO = require("socket.io");
 const cache = require("./cache-controller");
-const httpServer = http.createServer(expressServer); 
-const socketServer = socketIO(httpServer, { cors: { origin: ['http://localhost:3001', 'http://localhost:3002', 'http://localhost:3004'] } });
+const httpServer = http.createServer(expressServer);
+const socketServer = socketIO(httpServer, { cors: { origin: ['http://localhost:3000', 'http://localhost:3002', 'http://localhost:3004'] } });
 
 let userIdToSocketsMap = new Map();
 
@@ -17,6 +17,7 @@ socketServer.on("connection", socket => {
     let id = cache.get(token).id;
 
     userIdToSocketsMap.set(id, socket);
+    
     console.log("One client has been connected... Total clients: " +
         userIdToSocketsMap.size + " " + JSON.stringify(userIdToSocketsMap));
 
