@@ -1,0 +1,118 @@
+/* ALL CARDS */
+.vacations {
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: 300px;
+  min-width: 300px;
+  height: 280px;
+  margin: 1.5rem;
+  padding: 1rem;
+  box-shadow: inset 0 0 7px rgba(80, 80, 80, 0.8), 
+              inset 0 0 0 1000px rgba(0, 0, 0, 0.4), 
+              0 0 5px #333;
+  transition: all .3s ease-out;
+}
+
+.vacations * {  
+  padding: .2rem;
+  text-shadow: 0 0 7px black, 
+               0 0 4px white, 
+               0 0 2px white;
+  transition: all .3s;
+}
+
+.description {
+  padding: 1rem;
+  opacity: 0;
+  color: black;
+  font-weight: 900;
+  text-shadow: 0 0 3px white, 0 0 3px white, 0 0 3px white, 0 0 3px white, 0 0 3px white !important;
+}
+  
+.vacations:hover .description {
+  display: block;
+  opacity: 1;
+}
+
+.vacations:hover .follow {
+  transform: scale(1.1);
+  filter: saturate(1);
+  opacity: 1;
+}
+
+
+/* GUEST or USER (not admin) */
+.home > .vacations:hover {
+  cursor: pointer;
+  border-radius: 44%;
+  box-shadow: inset 0 0 7px rgb(95, 95, 95), 
+              inset 0 0 0 1000px rgba(102, 39, 39, 0.4), 
+              0 0 5px 3px rgb(95, 95, 95);
+}
+
+
+/* FOLLOWED */
+.vacations.followed {
+  box-shadow: 0 0 8px 2px rgb(253, 216, 96), 
+              inset 0 0 10px 3px rgb(253, 216, 96), 
+              inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  transition: all .2s ease-out;
+}
+
+.vacations.followed:hover {
+  box-shadow: 0 0 8px 2px rgb(253, 216, 96), 
+              inset 0 0 8px 2px rgb(253, 216, 96), 
+              inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.vacations.followed .follow {
+  filter: none;
+  opacity: 1;
+  width: 33%;
+  left: 0;
+}
+
+.vacations.followed:hover .follow {
+  transform: scale(1.03);
+}
+
+/* star */
+.follow {
+  position: absolute;
+  bottom: 1rem;
+  left: 41.7%;
+  width: 50px;
+  opacity: 0.7;
+  filter: saturate(0.7);
+  transition: all .2s;
+}
+
+
+/* amount of followers (displayed on top of the stars) */
+.vacations label {
+  pointer-events: none;
+  font-size: small;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 1.7rem;
+  left: 8.95rem;
+  z-index: 1;
+  text-shadow: 0 0 1px #333;
+  transition: all .3s;
+}
+  
+.vacations.followed label {
+  font-size: large;
+  bottom: 2.2rem;
+  left: 1.3rem;
+}
+
+.vacations.followed label::before {
+  font-size: .8rem;
+  /* text-decoration: underline; */
+  content: 'followers';
+  opacity: 0.6;
+}

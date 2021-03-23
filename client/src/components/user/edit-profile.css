@@ -1,0 +1,37 @@
+.edit-profile {
+    flex-direction: column;
+    margin: 1rem auto;
+    max-width: 600px;
+    font-size: x-large;
+    text-align: center;
+    color: gray;
+    text-shadow: 1px 1px 2px lightgray;
+}
+
+.edit-profile input[type="text"]:first-of-type {
+    padding-top: 0;
+}
+
+.edit-profile .btns {
+    flex-direction: column;
+}
+
+.disabled {
+    caret-color: transparent;
+    cursor: default;
+    color: grey;
+}
+
+.btns > .delete-btn {
+    max-width: 130px;
+    font-size: small;
+    font-weight: 600;
+    margin: 0 auto ;
+    color: white;
+    background-color: var(--dangerColor);
+    transition: all .2s;
+}
+
+.delete-btn:hover {
+    font-weight: 900;
+}

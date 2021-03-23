@@ -1,0 +1,49 @@
+.admin {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.manage-vacations {
+    text-transform: capitalize;
+    flex-direction: column;
+    margin: 1rem auto;
+    max-width: 600px;
+    font-size: x-large;
+    text-align: center;
+    color: gray;
+    text-shadow: 1px 1px 2px lightgray;
+}
+
+
+/* ICONS */
+.chart {
+    position: absolute;
+    top: 3.1rem;
+    right: 14rem;
+    width: 60px;
+    transform: rotate(1deg);
+    transition: all .2s;
+}
+
+.edit, 
+.delete {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+}
+
+.edit {
+    right: 0;
+    width: 44px;
+}
+
+.delete {
+    left: 0;
+    width: 50px;
+}
+
+.edit:hover, 
+.delete:hover,
+.chart:hover {
+    transform: scale(1.1);
+}

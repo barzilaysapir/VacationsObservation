@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.layout {
+  min-height: 100vh;
+  padding: 2rem;
+  color: white;
+  background:
+  radial-gradient(lightgray 3px, transparent 4px),
+  radial-gradient(lightgray 3px, transparent 4px),
+  linear-gradient(#fff 4px, transparent 0),
+  linear-gradient(45deg, transparent 74px, transparent 75px, #c0c0c0cc 75px, #c0c0c0cc 76px, transparent 77px, transparent 109px),
+  linear-gradient(-45deg, transparent 75px, transparent 76px, #c0c0c0cc 76px, #c0c0c0cc 77px, transparent 78px, transparent 109px),
+  #fff;
+  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;  
+  background-attachment: fixed;
+}
+
+.layout > main > * {
+  display: flex;
+  justify-content: center;
+}
+
+main > * {
+  animation: slowFadeIn .3s;
+}
+
+@keyframes slowFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.vacations.landing {
+  animation: landingVacations 3s;
+}
+
+@keyframes landingVacations {
+  0%, 70% {
+    opacity: 0;
+    transform: rotate(10deg) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.modal-content.landing {
+  animation: modalLanding 3s ;
+}
+
+@keyframes modalLanding {
+  0%, 80% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* GENERIC */
+button {
+  cursor: pointer;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: large;
+  font-weight: 900;
+  padding: .5rem;
+  color: #fff;
+  background-color: gray;
+  border: 3px solid transparent;
+  transition: all .3s;
+}
+
+button:hover {
+  color: gray;
+  background-color: transparent;
+  border: 3px solid gray;
+}
+
+input {
+  background-color: transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  border-bottom: 1px solid gray;
+  width: 90%;
+  min-width: max-content;
+  display: block;
+  margin: 1.5rem auto;
+  transition: all .2s;
+}
+
+input::-webkit-input-placeholder {
+  font-weight: 400;
+}
+
+input:focus {
+  border-bottom: 1.4px solid black;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.btns > * {
+  font-weight: 900;
+  font-size: large;
+  border-radius: 30px;
+  cursor: pointer;
+  max-width: 200px;
+  padding: .4rem;
+  transition: all .4s;
+}
+
+.submit-btn {
+  color: #fff;
+  background-color: gray;
+}
+
+.submit-btn:hover {
+  background-color: rgb(50, 50, 50);
+}
+
+
+
+/* backdrop filter - forms */
+.backdrop-form {
+  padding: 3rem 2rem;
+  box-shadow: 1px 1px 6px lightgray;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+}
+
+.backdrop-form > h2 {
+  padding-bottom: 2rem;
+}
+
+
+
+/* layout custom design for Tablets & Ipads  */
+@media (max-width: 1025px) {
+  button {
+    top: 2rem;
+  }
+  .chart {
+    top: 2rem;
+  }
+}
+
+@media (max-width: 759px) {
+  button {
+    position: fixed;
+    top: auto;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1;
+    background-color: #333;
+  }
+  .chart {
+    position: fixed;
+    width: 80px;
+    top: auto;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 481px) {
+  button {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1;
+    background-color: #333;
+  }
+
+  .chart {
+    bottom: 1.5rem;
+  }
+
+  .edit-profile h2, 
+  .add-profile h2, 
+  .edit-vacation h2 {
+    font-size: 2.5rem;
+  }
+
+  .btns * {
+    margin: .5rem;
+  }
+
+  .modal-header {
+    padding: 1.5rem;
+  }
+}
